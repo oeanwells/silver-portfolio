@@ -1,43 +1,62 @@
-var myHeaders = new Headers();
-myHeaders.append("x-access-token", "goldapi-3ldrukkm11plm-io");
-myHeaders.append("Content-Type", "application/json");
+const currentPrice = document.querySelector("#currentPrice");
+const totalCurrentValue = document.querySelector("#totalCurrentValue");
+const numberBought = document.querySelector("#numberBought");
+const purchasePrice = document.querySelector("#purchasePrice");
+const percentage = document.querySelector("#percentage");
+const indivTotalSilver = document.querySelector("#indivTotalSilver");
+const indivCurrentCost = document.querySelector("#indivCurrentCost");
+const indivCurrentVal = document.querySelector("#indivCurrentVal");
+console.log(numberBought.value);
 
-var requestOptions = {
-  method: 'GET',
-  headers: myHeaders,
-  redirect: 'follow'
-};
+const getCurrentCost = () => {
+  const boughtVal = numberBought.value;
+  const purPrice = purchasePrice.value;
 
-fetch("https://www.goldapi.io/api/XAG/USD", requestOptions)
-  .then(response => response.text())
-  .then(result => console.log(result))
-  .catch(error => console.log('error', error));
-//
-//
-//
-const currentPrice = document.querySelector('#currentPrice');
-
-
-const fetchSilverPrice = async () => {
-  try {
-    const config = {
-        headers: {'x-access-token': 'goldapi-3ldrukkm11plm-io', "Content-Type": "application/json"},
-        // redirect: 'follow'
-      };
-    const res = await axios.get(
-      "https://www.goldapi.io/api/XAG/USD", config
-    );
-    console.log(res);
-    console.log(res.data.ask);
-    currentPrice.innerHTML = `<h2>${res.data.ask}</h2>`
-  } catch (e) {
-    console.log("Axios: No data available for this pair");
+  let currentCost = 0;
+  if (boughtVal === '') {
+    currentCost = 0;
+  } else {
+    currentCost = boughtVal * purPrice;
   }
-};
-fetchSilverPrice();
+  console.log(currentCost)
+  indivCurrentCost.innerHTML = currentCost;
 
-// const getDadJoke = async () => {
-//   const config = { headers: { Accept: "application/json" } };
-//   const res = await axios.get("https://icanhazdadjoke.com/", config);
-//   div.innerHTML = `<h2>${res.data.joke}</h2>`;
+};
+
+// numberBought.addEventListener('unclick')
+
+// window.addEventListener('click', (e) => {
+//   e.stopPropagation();
+  
+// })
+
+window.addEventListener('click', (e) => {
+  getCurrentCost();
+}); 
+
+// const fetchSilverPrice = async () => {
+//   try {
+//     const config = {
+//         headers: {'x-access-token': 'goldapi-3ldrukkm11plm-io', "Content-Type": "application/json"},
+//         // redirect: 'follow'
+//       };
+//     const res = await axios.get(
+//       "https://www.goldapi.io/api/XAG/USD", config
+//     );
+//     return res.data.ask
+//   } catch (e) {
+//     console.log("Axios: No data available for this pair");
+//   }
 // };
+
+// const addCurrentPrice = async () => {
+//   const currentPriceText = await fetchSilverPrice();
+//   console.log(currentPriceText)
+//   currentPrice.innerHTML = `<h2>Current Silver Price: ${currentPriceText}</h2>`
+
+// }
+// addCurrentPrice();
+
+// const fetchTotalCurrentValue = () => {
+
+// }
