@@ -1,56 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Silver Portfolio</title>
-    <link rel="stylesheet" href="app.css" type="text/css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
+    <link rel="stylesheet" href="app.css" type="text/css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css"
+    />
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-</head>
-<body>
-    <h1 class="title is-1">Silver Portfolio for Charles Wells</h1>
-    
+  </head>
+  <body>
+    <h1 class="title is-1">Silver Portfolio for: UserName</h1>
+
     <div class="block subtitle" id="currentPrice">$25.67</div>
-    <div class="block subtitle" id="totalCurrentValue">Total Current Value: </div>
+    <div class="block subtitle" id="totalCurrentValue">
+      Total Current Value:
+    </div>
 
     <table class="table is-bordered is-fullwidth is-striped">
-        <thead>
-            <tr>
-                <th># Bought</th>
-                <th>Type of Coin or Bullion</th>
-                <th>Purchase Price ($/oz)</th>
-                <th>Percentage of Silver</th>
-                <th>Total Silver Amount</th>
-                <th>Current Cost</th>
-                <th>Current Value</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>20 coins</td>
-                <td>SAE</td>
-                <td>36</td>
-                <td>100%</td>
-                <td>20 oz</td>
-                <td>$720</td>
-                <td>(25.67*20oz)</td>
-            </tr>
-            <tr>
-                <td><input class="input is-primary is-medium" type="number" id="numberBought"></td>
-                <td><input class="input is-primary is-medium" type="text"></td>
-                <td><input class="input is-primary is-medium" type="number" id="purchasePrice"></td>
-                <td><input class="input is-primary is-medium" type="number" id="percentage"></td>
-                <td><input class="input is-primary is-medium" type="number" id="indivTotalSilver"></td>
-                <td id="indivCurrentCost"></td>
-                <td id="indivCurrentVal"></td>
-            </tr>
-        </tbody>
-    </table>    
+      <thead>
+        <tr>
+          <th># Bought</th>
+          <th>Type of Coin or Bullion</th>
+          <th>Purchase Price ($/oz)</th>
+          <th>Percentage of Silver</th>
+          <th>Total Silver Amount</th>
+          <th>Current Cost</th>
+          <th>Current Value</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>20 coins</td>
+          <td>SAE</td>
+          <td>36</td>
+          <td>100%</td>
+          <td>20 oz</td>
+          <td>$720</td>
+          <td>(25.67*20oz)</td>
+        </tr>
+        <tr>
+          <td>
+            <input
+              class="input is-primary is-medium"
+              type="number"
+              id="numberBought"
+            />
+          </td>
+          <td><input class="input is-primary is-medium" type="text" /></td>
+          <td>
+            <input
+              class="input is-primary is-medium"
+              type="number"
+              id="purchasePrice"
+            />
+          </td>
+          <td>
+            <input
+              class="input is-primary is-medium"
+              type="number"
+              id="percentage"
+            />
+          </td>
+          <td>
+            <input
+              class="input is-primary is-medium"
+              type="number"
+              id="indivTotalSilver"
+            />
+          </td>
+          <td id="indivCurrentCost"></td>
+          <td id="indivCurrentVal"></td>
+        </tr>
+      </tbody>
+    </table>
 
-<button class="button is-link">New Row</button>
+    <button class="button is-link">New Row</button>
     <button class="button is-primary">Add Row</button>
 
     <script src="index.js"></script>
-</body>
+  </body>
 </html>
